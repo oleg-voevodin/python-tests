@@ -14,7 +14,7 @@ quantity_of_questions = 0
 quantity_of_right_answers = 0
 
 print('===== TEST =====')
-
+print(f'\nTest name: {file_with_test.readline().strip()}')
 while True:
     question = file_with_test.readline().strip()
     if (not question):
@@ -27,6 +27,8 @@ while True:
     print(f'\n{question}\n\n 1. {first_answer}\n 2. {second_answer}\n 3. {third_answer}\n 4. {fourth_answer}')
     answer = input('\nОтвет: ')
     quantity_of_questions += 1
+    if answer.lower() == 'quit' or answer.lower() == 'exit':
+        print(':D'); exit()
     if answer == right_answer:
         quantity_of_right_answers += 1
 
